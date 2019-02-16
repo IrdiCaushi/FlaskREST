@@ -40,3 +40,9 @@ def hello_word_v2():
     data = request.get_json()
     word = data['word']
     return "Hello {}".format(word)
+
+@app.route('/', methods=['GET','POST'])
+def index():
+    if request.method == "POST":
+        return "Buy, World"
+    return "Hello, World"
