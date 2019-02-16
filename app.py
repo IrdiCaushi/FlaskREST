@@ -1,12 +1,15 @@
 
 # First Flask application
 # Irdi Caushaj
-from flask import Flask
+from flask import Flask, request, jsonify
+
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
-    return "Hello, World!"
+    if request.method == "POST":
+        return "Buy, World"
+    return "Hello, World"
 
 @app.route('/inf310c')
 def inf310c():
